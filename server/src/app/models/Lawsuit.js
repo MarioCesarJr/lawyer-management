@@ -8,8 +8,6 @@ class Lawsuit extends Model {
                 title: Sequelize.STRING,
                 description: Sequelize.STRING,
                 note: Sequelize.STRING,
-                responsible_id: Sequelize.INTEGER,
-                customer_id: Sequelize.INTEGER,
             },
             {
                 sequelize,
