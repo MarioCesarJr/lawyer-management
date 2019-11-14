@@ -1,6 +1,6 @@
 import Sequelize, { Model } from 'sequelize';
 
-class Case extends Model {
+class Lawsuit extends Model {
     static init(sequelize) {
         super.init(
             {
@@ -8,6 +8,8 @@ class Case extends Model {
                 title: Sequelize.STRING,
                 description: Sequelize.STRING,
                 note: Sequelize.STRING,
+                responsible_id: Sequelize.INTEGER,
+                customer_id: Sequelize.INTEGER,
             },
             {
                 sequelize,
@@ -19,13 +21,11 @@ class Case extends Model {
     static associate(models) {
         this.belongsTo(models.User, {
             foreignKey: 'responsible_id',
-            as: 'responsible',
         });
         this.belongsTo(models.Customer, {
             foreignKey: 'customer_id',
-            as: 'customer',
         });
     }
 }
 
-export default Case;
+export default Lawsuit;
