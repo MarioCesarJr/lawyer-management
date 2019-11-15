@@ -8,7 +8,7 @@ class Contract extends Model {
                 description: Sequelize.STRING,
                 initial_date: Sequelize.DATE,
                 final_date: Sequelize.DATE,
-                value: Sequelize.DOUBLE,
+                value: Sequelize.FLOAT,
                 note: Sequelize.STRING,
             },
             {
