@@ -57,6 +57,16 @@ class CustomerController {
 
         return res.send();
     }
+
+    async show(req, res) {
+        const customer = await Customer.findByPk(req.params.id);
+
+        if (!customer) {
+            return res.status(400).json({ error: 'Customer not found' });
+        }
+
+        return res.json(customer);
+    }
 }
 
 export default new CustomerController();
