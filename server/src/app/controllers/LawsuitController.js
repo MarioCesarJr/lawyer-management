@@ -13,6 +13,14 @@ class LawsuitController {
 
         return res.json(lawsuit);
     }
+
+    async delete(req, res) {
+        const lawsuit = await Lawsuit.findByPk(req.params.id);
+
+        await lawsuit.destroy();
+
+        return res.send();
+    }
 }
 
 export default new LawsuitController();

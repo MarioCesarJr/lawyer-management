@@ -13,6 +13,7 @@ routes.post('/customers', CustomerController.store);
 
 routes.post('/lawsuits', LawsuitController.store);
 routes.put('/lawsuits/:id', LawsuitController.update);
+routes.delete('/lawsuits/:id', LawsuitController.delete);
 
 routes.post('/contracts', ContractController.store);
 
