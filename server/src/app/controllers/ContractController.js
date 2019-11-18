@@ -26,6 +26,14 @@ class ContractController {
 
         return res.json(contract);
     }
+
+    async delete(req, res) {
+        const contract = await Contract.findByPk(req.params.id);
+
+        await contract.destroy();
+
+        return res.send();
+    }
 }
 
 export default new ContractController();
