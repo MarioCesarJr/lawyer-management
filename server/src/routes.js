@@ -12,6 +12,7 @@ routes.post('/users', UserController.store);
 routes.get('/customers', CustomerController.index);
 routes.post('/customers', CustomerController.store);
 routes.put('/customers/:id', CustomerController.update);
+routes.delete('/customers/:id', CustomerController.delete);
 
 routes.get('/lawsuits', LawsuitController.index);
 routes.post('/lawsuits', LawsuitController.store);

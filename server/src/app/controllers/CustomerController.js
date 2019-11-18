@@ -49,6 +49,14 @@ class CustomerController {
 
         return res.json(customer);
     }
+
+    async delete(req, res) {
+        const customer = await Customer.findByPk(req.params.id);
+
+        await customer.destroy();
+
+        return res.send();
+    }
 }
 
 export default new CustomerController();
