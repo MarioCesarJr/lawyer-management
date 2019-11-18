@@ -21,5 +21,6 @@ routes.get('/contracts', ContractController.index);
 routes.post('/contracts', ContractController.store);
 routes.put('/contracts/:id', ContractController.update);
 routes.delete('/contracts/:id', ContractController.delete);
+routes.get('/contracts/:id', ContractController.show);
 
 export default routes;

@@ -34,6 +34,23 @@ class ContractController {
 
         return res.send();
     }
+
+    async show(req, res) {
+        const contract = await Contract.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Customer,
+                    attributes: ['name'],
+                },
+            ],
+        });
+
+        if (!contract) {
+            return res.status(400).json({ error: 'Contract not found' });
+        }
+
+        return res.json(contract);
+    }
 }
 
 export default new ContractController();
