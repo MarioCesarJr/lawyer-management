@@ -17,6 +17,7 @@ routes.put('/lawsuits/:id', LawsuitController.update);
 routes.delete('/lawsuits/:id', LawsuitController.delete);
 routes.get('/lawsuits/:id', LawsuitController.show);
 
+routes.get('/contracts', ContractController.index);
 routes.post('/contracts', ContractController.store);
 
 export default routes;
