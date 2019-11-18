@@ -9,6 +9,7 @@ const routes = new Router();
 
 routes.post('/users', UserController.store);
 
+routes.get('/customers', CustomerController.index);
 routes.post('/customers', CustomerController.store);
 
 routes.get('/lawsuits', LawsuitController.index);

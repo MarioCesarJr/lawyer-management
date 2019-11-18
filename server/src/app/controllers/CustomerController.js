@@ -1,6 +1,17 @@
 import Customer from '../models/Customer';
 
 class CustomerController {
+    async index(req, res) {
+        const page = req.query.page || 1;
+
+        const customers = await Customer.findAll({
+            limit: 10,
+            offset: 10 * page - 10,
+        });
+
+        return res.json(customers);
+    }
+
     async store(req, res) {
         const emailExists = await Customer.findOne({
             where: { email: req.body.email },
