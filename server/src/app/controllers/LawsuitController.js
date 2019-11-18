@@ -41,6 +41,27 @@ class LawsuitController {
 
         return res.send();
     }
+
+    async show(req, res) {
+        const lawsuit = await Lawsuit.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Customer,
+                    attributes: ['name'],
+                },
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ],
+        });
+
+        if (!lawsuit) {
+            return res.status(400).json({ error: 'Lawsuit not found' });
+        }
+
+        return res.json(lawsuit);
+    }
 }
 
 export default new LawsuitController();
