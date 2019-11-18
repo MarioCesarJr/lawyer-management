@@ -41,6 +41,14 @@ class CustomerController {
 
         return res.json(customer);
     }
+
+    async update(req, res) {
+        const customer = await Customer.findByPk(req.params.id);
+
+        await customer.update(req.body);
+
+        return res.json(customer);
+    }
 }
 
 export default new CustomerController();
