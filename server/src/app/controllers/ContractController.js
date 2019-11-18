@@ -18,6 +18,14 @@ class ContractController {
         const contract = await Contract.create(req.body);
         return res.json(contract);
     }
+
+    async update(req, res) {
+        const contract = await Contract.findByPk(req.params.id);
+
+        await contract.update(req.body);
+
+        return res.json(contract);
+    }
 }
 
 export default new ContractController();
