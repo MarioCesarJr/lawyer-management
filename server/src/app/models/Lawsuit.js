@@ -23,6 +23,9 @@ class Lawsuit extends Model {
         this.belongsTo(models.Customer, {
             foreignKey: 'customer_id',
         });
+        this.belongsTo(models.File, {
+            foreignKey: 'file_id',
+        });
     }
 }
 
