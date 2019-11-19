@@ -1,6 +1,7 @@
 import Lawsuit from '../models/Lawsuit';
 import Customer from '../models/Customer';
 import User from '../models/User';
+import File from '../models/File';
 
 class LawsuitController {
     async index(req, res) {
@@ -12,6 +13,10 @@ class LawsuitController {
                 {
                     model: User,
                     attributes: ['name'],
+                },
+                {
+                    model: File,
+                    attributes: ['name', 'path', 'url'],
                 },
             ],
             limit: 10,
