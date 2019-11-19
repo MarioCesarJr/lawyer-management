@@ -4,10 +4,11 @@ import User from '../app/models/User';
 import Customer from '../app/models/Customer';
 import Lawsuit from '../app/models/Lawsuit';
 import Contract from '../app/models/Contract';
+import File from '../app/models/File';
 
 import databaseConfig from '../config/database';
 
-const models = [User, Customer, Lawsuit, Contract];
+const models = [User, Customer, Lawsuit, Contract, File];
 
 class Database {
     constructor() {

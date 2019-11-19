@@ -6,6 +6,7 @@ import UserController from './app/controllers/UserController';
 import CustomerController from './app/controllers/CustomerController';
 import LawsuitController from './app/controllers/LawsuitController';
 import ContractController from './app/controllers/ContractController';
+import FileController from './app/controllers/FileController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -30,8 +31,6 @@ routes.put('/contracts/:id', ContractController.update);
 routes.delete('/contracts/:id', ContractController.delete);
 routes.get('/contracts/:id', ContractController.show);
 
-routes.post('/files', upload.single('file'), (req, res) => {
-    return res.json({ ok: true });
-});
+routes.post('/files', upload.single('file'), FileController.store);
 
 export default routes;
