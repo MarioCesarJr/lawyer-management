@@ -32,5 +32,6 @@ routes.delete('/contracts/:id', ContractController.delete);
 routes.get('/contracts/:id', ContractController.show);
 
 routes.post('/files', upload.single('file'), FileController.store);
+routes.get('/files', FileController.index);
 
 export default routes;
