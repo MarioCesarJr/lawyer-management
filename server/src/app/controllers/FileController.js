@@ -5,7 +5,7 @@ class FileController {
         const { page = 1 } = req.query;
 
         const files = await File.findAll({
-            attributes: ['id', 'name', 'url'],
+            attributes: ['id', 'name', 'url', 'path'],
             limit: 10,
             offset: (page - 1) * 10,
         });
