@@ -1,3 +1,7 @@
+import path from 'path';
+import { promisify } from 'util';
+import fs from 'fs';
+
 import File from '../models/File';
 
 class FileController {
@@ -22,6 +26,25 @@ class FileController {
         });
 
         return res.json(file);
+    }
+
+    async delete(req, res) {
+        const file = await File.findByPk(req.params.id);
+
+        promisify(fs.unlink)(
+            path.resolve(
+                __dirname,
+                '..',
+                '..',
+                '..',
+                'tmp',
+                'uploads',
+                file.path
+            )
+        );
+
+        await file.destroy();
+        return res.send();
     }
 }
 
