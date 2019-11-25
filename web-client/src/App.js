@@ -6,10 +6,13 @@ import history from './services/history';
 
 import GlobalStyle from './styles/global';
 
+import Header from '~/components/Header';
+
 function App() {
     return (
         <Router history={history}>
             <GlobalStyle />
+            <Header />
             <Routes />
         </Router>
     );
