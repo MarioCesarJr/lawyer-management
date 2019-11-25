@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    position: fixed;
     background-color: #1e94d2;
     padding: 0 30px;
+
+    top: 0;
+    right: 0;
+    left: 0;
 `;
 
 export const Content = styled.div`
