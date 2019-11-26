@@ -13,6 +13,16 @@ export const Container = styled.aside`
     overflow-y: auto;
     z-index: 9998;
 
+    transition: 0.5s;
+
+    margin-left: -211px;
+
+    ${({ active }) =>
+        active &&
+        `
+    margin-left: 0px;
+  `}
+
     nav {
         ul {
             li {
@@ -46,5 +56,9 @@ export const Container = styled.aside`
         background-color: #dfdfdf;
         color: #1e94d2;
         width: 100%;
+    }
+
+    @media (min-width: 960px) {
+        margin-left: 0px;
     }
 `;

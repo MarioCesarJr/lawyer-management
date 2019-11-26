@@ -6,14 +6,12 @@ import history from './services/history';
 
 import GlobalStyle from './styles/global';
 
-import Header from '~/components/Header';
 import Sidebar from '~/components/Sidebar';
 
 function App() {
     return (
         <Router history={history}>
             <GlobalStyle />
-            <Header />
             <Sidebar />
             <Routes />
         </Router>

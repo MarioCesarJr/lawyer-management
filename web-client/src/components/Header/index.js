@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Container, Content, Profile } from './styles';
 import { MdSettings } from 'react-icons/md';
 
-export default function Header() {
+export default function Header({ handleToggler }) {
     return (
         <Container>
             <Content>
@@ -15,7 +15,9 @@ export default function Header() {
                 </nav>
 
                 <aside>
-                    <a href="/dashboard">☰</a>
+                    <a href="#/" onClick={handleToggler}>
+                        ☰
+                    </a>
                     <Profile>
                         <div>
                             <strong>Mário</strong>
