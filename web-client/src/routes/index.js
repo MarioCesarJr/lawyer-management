@@ -1,5 +1,8 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import Route from './Route';
+
+import SignIn from '~/pages/Auth/SignIn';
 
 import Dashboard from '~/pages/Dashboard';
 import Customers from '~/pages/Customers';
@@ -8,9 +11,11 @@ import Lawsuits from '~/pages/Lawsuits';
 export default function Routes() {
     return (
         <Switch>
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/customers" component={Customers} />
-            <Route path="/lawsuits" component={Lawsuits} />
+            <Route path="/" exact component={SignIn} />
+
+            <Route path="/dashboard" component={Dashboard} isPrivate />
+            <Route path="/customers" component={Customers} isPrivate />
+            <Route path="/lawsuits" component={Lawsuits} isPrivate />
         </Switch>
     );
 }
