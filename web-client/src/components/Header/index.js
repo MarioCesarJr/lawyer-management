@@ -15,6 +15,7 @@ export default function Header() {
                 </nav>
 
                 <aside>
+                    <a href="/dashboard">☰</a>
                     <Profile>
                         <div>
                             <strong>Mário</strong>
