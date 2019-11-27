@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Title } from './styles';
 
 export default function Dashboard() {
     return (
         <Container>
-            <div>Dashboard</div>
+            <Title>Dashboard</Title>
         </Container>
     );
 }

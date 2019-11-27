@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
 export const Content = styled.section`
     margin-top: 60px;
-    margin-left: 5px;
+    padding: 0 5px;
     transition: 0.5s;
 
     @media (min-width: 960px) {

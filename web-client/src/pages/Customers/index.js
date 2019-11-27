@@ -1,7 +1,17 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Top, Container, Title, Required } from './styles';
 
 export default function Customers() {
-    return <h1>Clientes</h1>;
+    return (
+        <>
+            <Top>
+                <Title>Adicionar cliente</Title>
+                <Required>
+                    <span>*</span>Campo obrigatório
+                </Required>
+            </Top>
+            <Container></Container>
+        </>
+    );
 }

@@ -1,7 +1,11 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Container, Title } from './styles';
 
 export default function Lawsuits() {
-    return <div>Processos</div>;
+    return (
+        <Container>
+            <Title>Processos e casos</Title>
+        </Container>
+    );
 }
