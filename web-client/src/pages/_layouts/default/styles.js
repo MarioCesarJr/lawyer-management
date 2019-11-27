@@ -9,8 +9,9 @@ export const Content = styled.section`
     margin-top: 60px;
     padding: 0 5px;
     transition: 0.5s;
+    max-width: 1200px;
 
     @media (min-width: 960px) {
-        margin-left: 220px;
+        margin-left: 210px;
     }
 `;
