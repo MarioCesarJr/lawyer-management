@@ -58,8 +58,8 @@ export const Container = styled.div`
             max-width: 1100px;
             min-height: 400px;
             background: #fff;
-            border-radius: 4px;
             border: 1px solid #ccc;
+            border-top: 0;
             padding: 30px;
             margin: 0 auto;
 
@@ -78,8 +78,9 @@ export const Container = styled.div`
                         left: 0;
                         transition: all 150ms ease-in;
 
-                        r {
+                        span {
                             color: #c0392b;
+                            display: contents;
                         }
                     }
                 }

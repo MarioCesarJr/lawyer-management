@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { Top, Container, Title, Required } from './styles';
 
+import Tabs from '~/components/Tabs';
+
 export default function Customers() {
     const [nameActive, setNameActive] = useState(false);
     const [name, setName] = useState('');
@@ -87,94 +89,112 @@ export default function Customers() {
                         <label>Pessoa jurídica</label>
                     </div>
 
-                    <div className="panel">
-                        <div>
-                            <label
-                                htmlFor="name"
-                                className={nameActive ? 'on' : ''}
-                            >
-                                <span>
-                                    Nome<r>*</r>
-                                </span>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    onFocus={activateNameField}
-                                    onBlur={disableNameField}
-                                    value={name}
-                                    onChange={e => setName(e.target.value)}
-                                />
-                            </label>
+                    <Tabs>
+                        <div label="Informações pessoais">
+                            <div className="panel">
+                                <div>
+                                    <label
+                                        htmlFor="name"
+                                        className={nameActive ? 'on' : ''}
+                                    >
+                                        <span>
+                                            Nome<span>*</span>
+                                        </span>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            onFocus={activateNameField}
+                                            onBlur={disableNameField}
+                                            value={name}
+                                            onChange={e =>
+                                                setName(e.target.value)
+                                            }
+                                        />
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <label
+                                        htmlFor="email"
+                                        className={emailActive ? 'on' : ''}
+                                    >
+                                        <span>Email</span>
+                                        <input
+                                            type="text"
+                                            id="email"
+                                            onFocus={activateEmailField}
+                                            onBlur={disableEmailField}
+                                            value={email}
+                                            onChange={e =>
+                                                setEmail(e.target.value)
+                                            }
+                                        />
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <label
+                                        htmlFor="phone"
+                                        className={phoneActive ? 'on' : ''}
+                                    >
+                                        <span>Telefone</span>
+                                        <input
+                                            type="text"
+                                            id="phone"
+                                            onFocus={activatePhoneField}
+                                            onBlur={disablePhoneField}
+                                            value={phone}
+                                            onChange={e =>
+                                                setPhone(e.target.value)
+                                            }
+                                        />
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <label
+                                        htmlFor="cpf"
+                                        className={cpfActive ? 'on' : ''}
+                                    >
+                                        <span>CPF</span>
+                                        <input
+                                            type="text"
+                                            id="cpf"
+                                            onFocus={activateCpfField}
+                                            onBlur={disableCpfField}
+                                            value={cpf}
+                                            onChange={e =>
+                                                setCpf(e.target.value)
+                                            }
+                                        />
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <label
+                                        htmlFor="rg"
+                                        className={rgActive ? 'on' : ''}
+                                    >
+                                        <span>RG</span>
+                                        <input
+                                            type="text"
+                                            id="rg"
+                                            onFocus={activateRgField}
+                                            onBlur={disableRgField}
+                                            value={rg}
+                                            onChange={e =>
+                                                setRg(e.target.value)
+                                            }
+                                        />
+                                    </label>
+                                </div>
+                            </div>
                         </div>
 
-                        <div>
-                            <label
-                                htmlFor="email"
-                                className={emailActive ? 'on' : ''}
-                            >
-                                <span>Email</span>
-                                <input
-                                    type="text"
-                                    id="email"
-                                    onFocus={activateEmailField}
-                                    onBlur={disableEmailField}
-                                    value={email}
-                                    onChange={e => setEmail(e.target.value)}
-                                />
-                            </label>
+                        <div label="Endereço">
+                            <div className="panel"></div>
                         </div>
-
-                        <div>
-                            <label
-                                htmlFor="phone"
-                                className={phoneActive ? 'on' : ''}
-                            >
-                                <span>Telefone</span>
-                                <input
-                                    type="text"
-                                    id="phone"
-                                    onFocus={activatePhoneField}
-                                    onBlur={disablePhoneField}
-                                    value={phone}
-                                    onChange={e => setPhone(e.target.value)}
-                                />
-                            </label>
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="cpf"
-                                className={cpfActive ? 'on' : ''}
-                            >
-                                <span>CPF</span>
-                                <input
-                                    type="text"
-                                    id="cpf"
-                                    onFocus={activateCpfField}
-                                    onBlur={disableCpfField}
-                                    value={cpf}
-                                    onChange={e => setCpf(e.target.value)}
-                                />
-                            </label>
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="rg"
-                                className={rgActive ? 'on' : ''}
-                            >
-                                <span>RG</span>
-                                <input
-                                    type="text"
-                                    id="rg"
-                                    onFocus={activateRgField}
-                                    onBlur={disableRgField}
-                                    value={rg}
-                                    onChange={e => setRg(e.target.value)}
-                                />
-                            </label>
-                        </div>
-                    </div>
+                    </Tabs>
                 </form>
             </Container>
         </>
