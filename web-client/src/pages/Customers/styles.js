@@ -11,104 +11,79 @@ export const Title = styled.h1`
     color: #636e72;
 `;
 
-export const Required = styled.h4`
+export const AddCustomer = styled.h4`
     padding: 20px 0;
-    color: #7f8c8d;
     margin-right: 30px;
 
-    span {
-        color: #c0392b;
-        padding: 0 3px;
+    a {
+        display: inline-block;
+        padding: 0.8em 1.2em;
+
+        background-color: #1e94d2;
+        color: #fff;
     }
 `;
 
 export const Container = styled.div`
+    padding: 20px;
+
     form {
-        .person_type {
-            display: flex;
+        position: relative;
+        width: 380px;
 
-            margin: 20px 15px 40px 20px;
+        input {
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            height: 40px;
+            padding: 15px 35px 15px 15px;
+            width: 100%;
+        }
 
-            input {
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 10;
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 9px 5px;
+        }
+    }
 
-                border-radius: 50%;
-                width: 16px;
-                height: 16px;
+    table {
+        margin-top: 30px;
+        width: 100%;
+        border-collapse: collapse;
 
-                border: 2px solid #ccc;
-                transition: 0.2s all linear;
-                outline: none;
+        thead {
+            text-align: left;
+            font-weight: bold;
+            color: #636e72;
 
-                margin-right: 5px;
-            }
+            tr {
+                td {
+                    padding: 8px;
+                    border-top: 2px solid #ddd;
+                    border-bottom: 2px solid #ddd;
 
-            input:checked {
-                border: 6px solid #1e94d2;
-            }
-
-            label {
-                margin-right: 5px;
+                    input {
+                        margin: 4px 0 0;
+                    }
+                }
             }
         }
 
-        .panel {
-            max-width: 1100px;
-            min-height: 400px;
-            background: #fff;
-            border: 1px solid #ccc;
-            border-top: 0;
-            padding: 30px;
-            margin: 0 auto;
+        tbody {
+            tr {
+                td {
+                    padding: 8px;
+                    border-top: 1px solid #ddd;
 
-            div {
-                display: flex;
-                margin: 10px;
-
-                label {
-                    display: block;
-                    flex: 1;
-                    position: relative;
-
-                    span {
-                        position: absolute;
-                        top: 1em;
-                        left: 0;
-                        transition: all 150ms ease-in;
-
-                        span {
-                            color: #c0392b;
-                            display: contents;
-                        }
+                    input {
+                        margin: 4px 0 0;
                     }
                 }
-
-                label.on span {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    font-size: 0.8em;
-                    color: #1e94d2;
-                }
-            }
-
-            label input {
-                width: 50%;
-                border: none;
-                border-bottom: 1px solid #ddd;
-                outline: none;
-                font-size: 1.2em;
-                margin-top: 1.2em;
-
-                @media (max-width: 960px) {
-                    width: 100%;
-                }
-            }
-
-            label.on input {
-                border-bottom: 1px solid #1e94d2;
             }
         }
     }

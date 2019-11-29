@@ -5,7 +5,10 @@ import Route from './Route';
 import SignIn from '~/pages/Auth/SignIn';
 
 import Dashboard from '~/pages/Dashboard';
+
 import Customers from '~/pages/Customers';
+import NewCustomer from '~/pages/Customers/New';
+
 import Lawsuits from '~/pages/Lawsuits';
 
 export default function Routes() {
@@ -15,6 +18,7 @@ export default function Routes() {
 
             <Route path="/dashboard" component={Dashboard} isPrivate />
             <Route path="/customers" component={Customers} isPrivate />
+            <Route path="/new-customer" component={NewCustomer} isPrivate />
             <Route path="/lawsuits" component={Lawsuits} isPrivate />
         </Switch>
     );

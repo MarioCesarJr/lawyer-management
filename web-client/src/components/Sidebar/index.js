@@ -42,6 +42,11 @@ export default function Sidebar() {
                             <NavLink
                                 to="/customers"
                                 activeClassName="is-selected"
+                                className={
+                                    window.location.pathname === '/new-customer'
+                                        ? 'is-selected'
+                                        : ''
+                                }
                             >
                                 <MdSupervisorAccount />
                                 Clientes
