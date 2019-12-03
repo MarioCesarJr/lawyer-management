@@ -86,6 +86,7 @@ export const Container = styled.div`
                 td {
                     padding: 8px;
                     border-top: 1px solid #ddd;
+                    color: #636e72;
 
                     a {
                         color: #1e94d2;
