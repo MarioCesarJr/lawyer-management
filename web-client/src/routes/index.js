@@ -8,6 +8,7 @@ import Dashboard from '~/pages/Dashboard';
 
 import Customers from '~/pages/Customers';
 import NewCustomer from '~/pages/Customers/New';
+import Info from '~/pages/Customers/Info';
 
 import Lawsuits from '~/pages/Lawsuits';
 
@@ -17,8 +18,11 @@ export default function Routes() {
             <Route path="/" exact component={SignIn} />
 
             <Route path="/dashboard" component={Dashboard} isPrivate />
+
             <Route path="/customers" component={Customers} isPrivate />
             <Route path="/new-customer" component={NewCustomer} isPrivate />
+            <Route path="/info-customer" component={Info} isPrivate />
+
             <Route path="/lawsuits" component={Lawsuits} isPrivate />
         </Switch>
     );

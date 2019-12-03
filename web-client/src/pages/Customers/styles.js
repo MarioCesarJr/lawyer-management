@@ -9,6 +9,8 @@ export const Top = styled.div`
 export const Title = styled.h1`
     padding: 20px 15px;
     color: #636e72;
+    font-weight: 100;
+    font-size: 1.9em;
 `;
 
 export const AddCustomer = styled.h4`
@@ -51,8 +53,13 @@ export const Container = styled.div`
         }
     }
 
-    table {
+    .result {
         margin-top: 30px;
+        color: #636e72;
+    }
+
+    table {
+        margin-top: 5px;
         width: 100%;
         border-collapse: collapse;
 
@@ -79,6 +86,10 @@ export const Container = styled.div`
                 td {
                     padding: 8px;
                     border-top: 1px solid #ddd;
+
+                    a {
+                        color: #1e94d2;
+                    }
 
                     input {
                         margin: 4px 0 0;

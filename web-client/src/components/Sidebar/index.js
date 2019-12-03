@@ -43,7 +43,10 @@ export default function Sidebar() {
                                 to="/customers"
                                 activeClassName="is-selected"
                                 className={
-                                    window.location.pathname === '/new-customer'
+                                    window.location.pathname ===
+                                        '/new-customer' ||
+                                    window.location.pathname ===
+                                        '/info-customer'
                                         ? 'is-selected'
                                         : ''
                                 }

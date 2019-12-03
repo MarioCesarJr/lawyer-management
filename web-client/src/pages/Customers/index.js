@@ -22,6 +22,8 @@ export default function Customers() {
                     </button>
                 </form>
 
+                <div className="result">Mostrando 5 de 20 cliente(s)</div>
+
                 <table>
                     <thead>
                         <tr>
@@ -38,7 +40,9 @@ export default function Customers() {
                             <td>
                                 <input type="checkbox" />
                             </td>
-                            <td>Fulano da Silva</td>
+                            <td>
+                                <Link to="/info-customer">Fulano da Silva</Link>
+                            </td>
                             <td>48 2259887</td>
                             <td>fulano@gmail.com</td>
                         </tr>
@@ -47,7 +51,9 @@ export default function Customers() {
                             <td>
                                 <input type="checkbox" />
                             </td>
-                            <td>Fulano da Silva</td>
+                            <td>
+                                <Link to="/info-customer">Fulano da Silva</Link>
+                            </td>
                             <td>48 2259887</td>
                             <td>fulano@gmail.com</td>
                         </tr>
@@ -56,7 +62,9 @@ export default function Customers() {
                             <td>
                                 <input type="checkbox" />
                             </td>
-                            <td>Fulano da Silva</td>
+                            <td>
+                                <Link to="/info-customer">Fulano da Silva</Link>
+                            </td>
                             <td>48 2259887</td>
                             <td>fulano@gmail.com</td>
                         </tr>
@@ -65,7 +73,9 @@ export default function Customers() {
                             <td>
                                 <input type="checkbox" />
                             </td>
-                            <td>Fulano da Silva</td>
+                            <td>
+                                <Link to="/info-customer">Fulano da Silva</Link>
+                            </td>
                             <td>48 2259887</td>
                             <td>fulano@gmail.com</td>
                         </tr>
@@ -74,7 +84,9 @@ export default function Customers() {
                             <td>
                                 <input type="checkbox" />
                             </td>
-                            <td>Fulano da Silva</td>
+                            <td>
+                                <Link to="/info-customer">Fulano da Silva</Link>
+                            </td>
                             <td>48 2259887</td>
                             <td>fulano@gmail.com</td>
                         </tr>
