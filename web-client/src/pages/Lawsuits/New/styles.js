@@ -26,42 +26,11 @@ export const Required = styled.h4`
 
 export const Container = styled.div`
     form {
-        .person_type {
-            display: flex;
-
-            margin: 20px 15px 40px 20px;
-
-            input {
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-
-                border-radius: 50%;
-                width: 16px;
-                height: 16px;
-
-                border: 2px solid #ccc;
-                transition: 0.2s all linear;
-                outline: none;
-
-                margin-right: 5px;
-            }
-
-            input:checked {
-                border: 6px solid #1e94d2;
-            }
-
-            label {
-                margin-right: 5px;
-            }
-        }
-
         .panel {
-            max-width: 1100px;
+            max-width: 1000px;
             min-height: 400px;
             background: #fff;
             border: 1px solid #ccc;
-            border-top: 0;
             padding: 30px;
             margin: 0 auto;
 
@@ -98,6 +67,21 @@ export const Container = styled.div`
             }
 
             label input {
+                width: 50%;
+                border: none;
+                border-bottom: 1px solid #ddd;
+                outline: none;
+                font-size: 1.2em;
+                margin-top: 1.2em;
+                color: #636e72;
+
+                @media (max-width: 960px) {
+                    width: 100%;
+                }
+            }
+
+            label textarea {
+                resize: none;
                 width: 50%;
                 border: none;
                 border-bottom: 1px solid #ddd;

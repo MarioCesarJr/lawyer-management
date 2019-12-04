@@ -61,6 +61,11 @@ export default function Sidebar() {
                             <NavLink
                                 to="/lawsuits"
                                 activeClassName="is-selected"
+                                className={
+                                    window.location.pathname === '/new-lawsuit'
+                                        ? 'is-selected'
+                                        : ''
+                                }
                             >
                                 <MdInsertDriveFile />
                                 Processos

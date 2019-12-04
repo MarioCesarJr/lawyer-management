@@ -11,6 +11,7 @@ import NewCustomer from '~/pages/Customers/New';
 import Info from '~/pages/Customers/Info';
 
 import Lawsuits from '~/pages/Lawsuits';
+import NewLawsuit from '~/pages/Lawsuits/New';
 
 export default function Routes() {
     return (
@@ -24,6 +25,7 @@ export default function Routes() {
             <Route path="/info-customer" component={Info} isPrivate />
 
             <Route path="/lawsuits" component={Lawsuits} isPrivate />
+            <Route path="/new-lawsuit" component={NewLawsuit} isPrivate />
         </Switch>
     );
 }
