@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Container } from './styles';
 import {
     MdDashboard,
+    MdEvent,
     MdSupervisorAccount,
     MdInsertDriveFile,
 } from 'react-icons/md';
@@ -34,6 +35,17 @@ export default function Sidebar() {
                             >
                                 <MdDashboard />
                                 Dashboard
+                            </NavLink>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <NavLink
+                                to="/schedule"
+                                activeClassName="is-selected"
+                            >
+                                <MdEvent />
+                                Agenda
                             </NavLink>
                         </li>
                     </ul>

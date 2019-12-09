@@ -6,6 +6,8 @@ import SignIn from '~/pages/Auth/SignIn';
 
 import Dashboard from '~/pages/Dashboard';
 
+import Schedule from '~/pages/Schedule';
+
 import Customers from '~/pages/Customers';
 import NewCustomer from '~/pages/Customers/New';
 import Info from '~/pages/Customers/Info';
@@ -19,6 +21,8 @@ export default function Routes() {
             <Route path="/" exact component={SignIn} />
 
             <Route path="/dashboard" component={Dashboard} isPrivate />
+
+            <Route path="/schedule" component={Schedule} isPrivate />
 
             <Route path="/customers" component={Customers} isPrivate />
             <Route path="/new-customer" component={NewCustomer} isPrivate />
