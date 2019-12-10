@@ -16,6 +16,19 @@ export default function NewLawsuit() {
         }
     }
 
+    const [contractActive, setContractActive] = useState(false);
+    const [contract, setContract] = useState('');
+
+    function activateContractField() {
+        setContractActive(true);
+    }
+
+    function disableContractField(e) {
+        if (e.target.value === '') {
+            setContractActive(false);
+        }
+    }
+
     const [descriptionActive, setDescriptionActive] = useState(false);
     const [description, setDescription] = useState('');
 
@@ -108,6 +121,23 @@ export default function NewLawsuit() {
                                     onBlur={disableTitleField}
                                     value={title}
                                     onChange={e => setTitle(e.target.value)}
+                                />
+                            </label>
+                        </div>
+
+                        <div>
+                            <label
+                                htmlFor="contract"
+                                className={contractActive ? 'on' : ''}
+                            >
+                                <span>Contrato</span>
+                                <input
+                                    type="text"
+                                    id="contract"
+                                    onFocus={activateContractField}
+                                    onBlur={disableContractField}
+                                    value={contract}
+                                    onChange={e => setContract(e.target.value)}
                                 />
                             </label>
                         </div>

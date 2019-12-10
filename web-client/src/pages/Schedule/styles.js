@@ -77,6 +77,11 @@ export const Container = styled.div`
                         color: #636e72;
                     }
                 }
+                td {
+                    span {
+                        color: #636e72;
+                    }
+                }
             }
         }
     }

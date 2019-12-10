@@ -53,6 +53,7 @@ export const Container = styled.div`
 
             label {
                 margin-right: 5px;
+                color: #636e72;
             }
         }
 

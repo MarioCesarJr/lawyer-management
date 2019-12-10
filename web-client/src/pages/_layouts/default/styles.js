@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.section`
-    margin-top: 60px;
+    margin-top: 56px;
     overflow-y: auto;
     height: calc(100% - 64px);
     padding: 0 5px;
