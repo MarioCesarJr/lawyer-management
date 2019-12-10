@@ -9,6 +9,8 @@ import {
     MdInsertDriveFile,
 } from 'react-icons/md';
 
+import { FaFileContract } from 'react-icons/fa';
+
 import Header from '~/components/Header';
 
 export default function Sidebar() {
@@ -81,6 +83,22 @@ export default function Sidebar() {
                             >
                                 <MdInsertDriveFile />
                                 Processos
+                            </NavLink>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <NavLink
+                                to="/contracts"
+                                activeClassName="is-selected"
+                                className={
+                                    window.location.pathname === '/new-contract'
+                                        ? 'is-selected'
+                                        : ''
+                                }
+                            >
+                                <FaFileContract />
+                                Contratos
                             </NavLink>
                         </li>
                     </ul>

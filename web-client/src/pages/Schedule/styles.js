@@ -20,6 +20,12 @@ export const Container = styled.div`
         color: #636e72;
     }
 
+    .fc-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .fc-right > button {
         background-color: #1e94d2 !important;
         border-color: #1e94d2 !important;
@@ -32,7 +38,6 @@ export const Container = styled.div`
         border-color: #1e94d2 !important;
         content: 'Hoje';
 
-        display: inline-block;
         font-weight: 400;
         text-align: center;
         vertical-align: middle;
@@ -51,6 +56,7 @@ export const Container = styled.div`
     .fc-button-primary:disabled {
         background-color: #1e94d2;
         border-color: #1e94d2;
+        cursor: not-allowed;
     }
 
     .fc-button-primary {

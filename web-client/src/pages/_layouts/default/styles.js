@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
 
 export const Content = styled.section`
     margin-top: 60px;
+    overflow-y: auto;
+    height: calc(100% - 64px);
     padding: 0 5px;
     transition: 0.5s;
     max-width: 1200px;

@@ -15,6 +15,9 @@ import Info from '~/pages/Customers/Info';
 import Lawsuits from '~/pages/Lawsuits';
 import NewLawsuit from '~/pages/Lawsuits/New';
 
+import Contracts from '~/pages/Contracts';
+import NewContract from '~/pages/Contracts/New';
+
 export default function Routes() {
     return (
         <Switch>
@@ -30,6 +33,9 @@ export default function Routes() {
 
             <Route path="/lawsuits" component={Lawsuits} isPrivate />
             <Route path="/new-lawsuit" component={NewLawsuit} isPrivate />
+
+            <Route path="/contracts" component={Contracts} isPrivate />
+            <Route path="/new-contract" component={NewContract} isPrivate />
         </Switch>
     );
 }
