@@ -9,42 +9,42 @@ export default function Schedule() {
     const data = [
         {
             title: 'evento 01',
-            color: 'blue',
+            color: '#1e94d2',
             date: '2019-12-09',
         },
         {
             title: 'evento 01',
-            color: 'blue',
+            color: '#1e94d2',
             date: '2019-12-09',
         },
         {
             title: 'evento 01',
-            color: 'blue',
+            color: '#1e94d2',
             date: '2019-12-09',
         },
         {
             title: 'evento 01',
-            color: 'blue',
+            color: '#1e94d2',
             date: '2019-12-09',
         },
         {
             title: 'evento 01',
-            color: 'blue',
+            color: '#1e94d2',
             date: '2019-12-09',
         },
         {
             title: 'evento 01',
-            color: 'blue',
+            color: '#1e94d2',
             date: '2019-12-09',
         },
         {
             title: 'evento 02',
-            color: 'blue',
+            color: '#1e94d2',
             date: '2019-12-13',
         },
         {
             title: 'evento 03',
-            color: 'blue',
+            color: '#1e94d2',
             date: '2019-12-18',
         },
     ];

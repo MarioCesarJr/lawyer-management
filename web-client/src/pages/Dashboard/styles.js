@@ -7,7 +7,8 @@ export const Top = styled.div`
 `;
 
 export const Title = styled.h1`
-    padding: 20px 15px;
+    margin-top: 20px;
+    margin-left: 15px;
     color: #636e72;
     font-weight: 100;
     font-size: 1.9em;
@@ -17,9 +18,4 @@ export const Container = styled.div`
     padding: 20px;
 `;
 
-export const ChartContainer = styled.div`
-    canvas {
-        max-width: 1000px !important;
-        max-height: 490px !important;
-    }
-`;
+export const ChartContainer = styled.div``;

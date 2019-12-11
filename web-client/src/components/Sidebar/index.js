@@ -9,7 +9,7 @@ import {
     MdInsertDriveFile,
 } from 'react-icons/md';
 
-import { FaFileContract } from 'react-icons/fa';
+import { FaFileContract, FaClipboardList } from 'react-icons/fa';
 
 import Header from '~/components/Header';
 
@@ -37,6 +37,14 @@ export default function Sidebar() {
                             >
                                 <MdDashboard />
                                 Dashboard
+                            </NavLink>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <NavLink to="/tasks" activeClassName="is-selected">
+                                <FaClipboardList />
+                                Tarefas
                             </NavLink>
                         </li>
                     </ul>

@@ -48,8 +48,11 @@ export default function Dashboard() {
                 <ChartContainer>
                     <Line
                         data={data}
+                        height={500}
+                        width={1100}
                         options={{
-                            responsive: true,
+                            responsive: false,
+                            maintainAspectRatio: false,
                         }}
                     />
                 </ChartContainer>

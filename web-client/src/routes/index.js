@@ -6,6 +6,8 @@ import SignIn from '~/pages/Auth/SignIn';
 
 import Dashboard from '~/pages/Dashboard';
 
+import Tasks from '~/pages/Tasks';
+
 import Schedule from '~/pages/Schedule';
 
 import Customers from '~/pages/Customers';
@@ -24,6 +26,8 @@ export default function Routes() {
             <Route path="/" exact component={SignIn} />
 
             <Route path="/dashboard" component={Dashboard} isPrivate />
+
+            <Route path="/tasks" component={Tasks} isPrivate />
 
             <Route path="/schedule" component={Schedule} isPrivate />
 
