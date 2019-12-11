@@ -9,6 +9,7 @@
         "@fullcalendar/react": "^4.3.0",
         "chart.js": "^2.9.3",
         "history": "^4.10.1",
+        "polished": "^3.4.2",
         "prop-types": "^15.7.2",
         "react": "^16.12.0",
         "react-chartjs-2": "^2.8.0",
