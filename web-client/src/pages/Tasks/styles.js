@@ -16,7 +16,7 @@ export const Title = styled.h1`
 `;
 
 export const AddTask = styled.button`
-    margin-right: 30px;
+    margin-right: 20px;
     border: 0;
     padding: 0.8em 1.2em;
     font-weight: bold;
