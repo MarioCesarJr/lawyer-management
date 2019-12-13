@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import logo from '~/assets/logo.png';
 import { Container, Content, Profile } from './styles';
 import { MdSettings } from 'react-icons/md';
 
@@ -10,7 +11,7 @@ export default function Header({ handleToggler }) {
             <Content>
                 <nav>
                     <Link to="/dashboard">
-                        <h1>LM</h1>
+                        <img src={logo} alt="logo" />
                     </Link>
                 </nav>
 
