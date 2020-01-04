@@ -29,6 +29,18 @@ export const AddCustomer = styled.h4`
 export const Container = styled.div`
     padding: 20px;
 
+    .result {
+        display: flex;
+        align-items: center;
+        height: 25px;
+
+        svg {
+            margin-left: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+
     form {
         position: relative;
         width: 380px;

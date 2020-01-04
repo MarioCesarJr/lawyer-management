@@ -1,48 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { MdSearch } from 'react-icons/md';
+import { MdSearch, MdDeleteForever } from 'react-icons/md';
+
+import api from '~/services/api';
 
 import { Top, Title, AddCustomer, Container } from './styles';
 
 export default function Customers() {
     const [allChecked, setAllChecked] = useState(false);
-    const [customers, setCustomers] = useState([
-        {
-            id: 1,
-            name: 'Fulano da Silva',
-            phone: '48 2259883',
-            email: 'fulano@gmail.com',
-            isChecked: false,
-        },
-        {
-            id: 2,
-            name: 'Ciclano da Silva',
-            phone: '48 2259884',
-            email: 'ciclano@gmail.com',
-            isChecked: false,
-        },
-        {
-            id: 3,
-            name: 'Beltrano da Silva',
-            phone: '48 2259885',
-            email: 'beltrano@gmail.com',
-            isChecked: false,
-        },
-        {
-            id: 4,
-            name: 'José da Silva',
-            phone: '48 2259886',
-            email: 'jose@gmail.com',
-            isChecked: false,
-        },
-        {
-            id: 5,
-            name: 'André da Silva',
-            phone: '48 2259887',
-            email: 'andre@gmail.com',
-            isChecked: false,
-        },
-    ]);
+    const [select, setSelect] = useState(0);
+    const [customers, setCustomers] = useState([]);
+
+    useEffect(() => {
+        async function loadCustomers() {
+            const response = await api.get('/customers');
+            setCustomers(response.data);
+        }
+
+        loadCustomers();
+    }, []);
+
+    async function deleteCustomer() {
+        let arrayId = [];
+        customers.forEach(customer => {
+            if (customer.isChecked) {
+                arrayId.push(customer.id);
+            }
+        });
+        await api.delete(`/customers/${arrayId}`);
+    }
 
     function handleChange(e) {
         let itemName = e.target.name;
@@ -50,6 +36,7 @@ export default function Customers() {
 
         if (itemName === 'checkAll') {
             setAllChecked(checked);
+            setSelect(checked ? customers.length : 0);
             setCustomers(
                 customers.map(item => ({ ...item, isChecked: checked }))
             );
@@ -61,11 +48,9 @@ export default function Customers() {
                         : item
                 )
             );
-
+            setSelect(checked ? select + 1 : select - 1);
             setAllChecked(customers.every(item => item.isChecked));
         }
-        console.log(customers.isChecked);
-        // return allChecked;
     }
 
     return (
@@ -87,6 +72,12 @@ export default function Customers() {
 
                 <div className="result">
                     Mostrando {customers.length} de 20 cliente(s)
+                    {select > 0 && (
+                        <MdDeleteForever
+                            title="excluir"
+                            onClick={deleteCustomer}
+                        />
+                    )}
                 </div>
 
                 <table>
