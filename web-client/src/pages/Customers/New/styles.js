@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Top = styled.div`
     display: flex;
@@ -30,6 +31,10 @@ export const Container = styled.div`
             display: flex;
 
             margin: 20px 15px 40px 20px;
+
+            span {
+                color: #c0392b;
+            }
 
             input {
                 -webkit-appearance: none;
@@ -87,6 +92,15 @@ export const Container = styled.div`
                             display: contents;
                         }
                     }
+
+                    span:nth-last-child(1) {
+                        color: #c0392b;
+                        margin-top: 30px;
+                    }
+                }
+
+                label.on span:nth-last-child(1) {
+                    display: none;
                 }
 
                 label.on span {
@@ -116,5 +130,18 @@ export const Container = styled.div`
                 border-bottom: 1px solid #1e94d2;
             }
         }
+    }
+`;
+
+export const SaveButton = styled.button`
+    margin-right: 30px;
+    border: 0;
+    padding: 0.8em 1.2em;
+    font-weight: bold;
+    background-color: #1e94d2;
+    color: #fff;
+
+    &:hover {
+        background: ${darken(0.03, '#1e94d9')};
     }
 `;

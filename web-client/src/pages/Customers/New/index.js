@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
-
-import { Top, Container, Title, Required } from './styles';
+import api from '~/services/api';
+import * as Yup from 'yup';
+import { Form, Input, Choice } from '@rocketseat/unform';
+import { Top, Container, Title, Required, SaveButton } from './styles';
 
 import Tabs from '~/components/Tabs';
 
+const schema = Yup.object().shape({
+    entity: Yup.string().required('O tipo é obrigatório'),
+    name: Yup.string().required('O nome é obrigatório'),
+    email: Yup.string().email('Insira um email válido'),
+    phone: Yup.string(),
+    cpf: Yup.string(),
+    rg: Yup.string(),
+});
+
 export default function NewCustomer() {
+    const initialData = {
+        entity: 'PESSOA FÍSICA',
+    };
+
     const [nameActive, setNameActive] = useState(false);
-    const [name, setName] = useState('');
 
     function activateNameField() {
         setNameActive(true);
@@ -19,7 +33,6 @@ export default function NewCustomer() {
     }
 
     const [emailActive, setEmailActive] = useState(false);
-    const [email, setEmail] = useState('');
 
     function activateEmailField() {
         setEmailActive(true);
@@ -32,7 +45,6 @@ export default function NewCustomer() {
     }
 
     const [phoneActive, setPhoneActive] = useState(false);
-    const [phone, setPhone] = useState('');
 
     function activatePhoneField() {
         setPhoneActive(true);
@@ -45,7 +57,6 @@ export default function NewCustomer() {
     }
 
     const [cpfActive, setCpfActive] = useState(false);
-    const [cpf, setCpf] = useState('');
 
     function activateCpfField() {
         setCpfActive(true);
@@ -58,7 +69,6 @@ export default function NewCustomer() {
     }
 
     const [rgActive, setRgActive] = useState(false);
-    const [rg, setRg] = useState('');
 
     function activateRgField() {
         setRgActive(true);
@@ -68,6 +78,17 @@ export default function NewCustomer() {
         if (e.target.value === '') {
             setRgActive(false);
         }
+    }
+
+    async function handleSubmit(data, { resetForm }) {
+        await api.post('/customers', data);
+
+        setNameActive(false);
+        setEmailActive(false);
+        setPhoneActive(false);
+        setCpfActive(false);
+        setRgActive(false);
+        resetForm();
     }
 
     return (
@@ -80,13 +101,25 @@ export default function NewCustomer() {
             </Top>
 
             <Container>
-                <form>
+                <Form
+                    schema={schema}
+                    onSubmit={handleSubmit}
+                    initialData={initialData}
+                >
                     <div className="person_type">
-                        <input type="radio" name="natural_person" checked />
-                        <label>Pessoa física</label>
-
-                        <input type="radio" name="legal_person" />
-                        <label>Pessoa jurídica</label>
+                        <Choice
+                            name="entity"
+                            options={[
+                                {
+                                    value: 'PESSOA FÍSICA',
+                                    label: 'Pessoa física',
+                                },
+                                {
+                                    value: 'PESSOA JURÍDICA',
+                                    label: 'Pessoa jurídica',
+                                },
+                            ]}
+                        />
                     </div>
 
                     <Tabs>
@@ -100,15 +133,11 @@ export default function NewCustomer() {
                                         <span>
                                             Nome<span>*</span>
                                         </span>
-                                        <input
+                                        <Input
                                             type="text"
-                                            id="name"
+                                            name="name"
                                             onFocus={activateNameField}
                                             onBlur={disableNameField}
-                                            value={name}
-                                            onChange={e =>
-                                                setName(e.target.value)
-                                            }
                                         />
                                     </label>
                                 </div>
@@ -119,15 +148,11 @@ export default function NewCustomer() {
                                         className={emailActive ? 'on' : ''}
                                     >
                                         <span>Email</span>
-                                        <input
-                                            type="text"
-                                            id="email"
+                                        <Input
+                                            type="email"
+                                            name="email"
                                             onFocus={activateEmailField}
                                             onBlur={disableEmailField}
-                                            value={email}
-                                            onChange={e =>
-                                                setEmail(e.target.value)
-                                            }
                                         />
                                     </label>
                                 </div>
@@ -138,15 +163,11 @@ export default function NewCustomer() {
                                         className={phoneActive ? 'on' : ''}
                                     >
                                         <span>Telefone</span>
-                                        <input
+                                        <Input
                                             type="text"
-                                            id="phone"
+                                            name="phone"
                                             onFocus={activatePhoneField}
                                             onBlur={disablePhoneField}
-                                            value={phone}
-                                            onChange={e =>
-                                                setPhone(e.target.value)
-                                            }
                                         />
                                     </label>
                                 </div>
@@ -157,15 +178,11 @@ export default function NewCustomer() {
                                         className={cpfActive ? 'on' : ''}
                                     >
                                         <span>CPF</span>
-                                        <input
+                                        <Input
                                             type="text"
-                                            id="cpf"
+                                            name="cpf"
                                             onFocus={activateCpfField}
                                             onBlur={disableCpfField}
-                                            value={cpf}
-                                            onChange={e =>
-                                                setCpf(e.target.value)
-                                            }
                                         />
                                     </label>
                                 </div>
@@ -176,18 +193,15 @@ export default function NewCustomer() {
                                         className={rgActive ? 'on' : ''}
                                     >
                                         <span>RG</span>
-                                        <input
+                                        <Input
                                             type="text"
-                                            id="rg"
+                                            name="rg"
                                             onFocus={activateRgField}
                                             onBlur={disableRgField}
-                                            value={rg}
-                                            onChange={e =>
-                                                setRg(e.target.value)
-                                            }
                                         />
                                     </label>
                                 </div>
+                                <SaveButton type="submit">Salvar</SaveButton>
                             </div>
                         </div>
 
@@ -195,7 +209,7 @@ export default function NewCustomer() {
                             <div className="panel"></div>
                         </div>
                     </Tabs>
-                </form>
+                </Form>
             </Container>
         </>
     );
