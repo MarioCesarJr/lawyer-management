@@ -28,6 +28,11 @@ export default function Customers() {
             }
         });
         await api.delete(`/customers/${arrayId}`);
+        setCustomers(
+            customers.filter(customer => !arrayId.includes(customer.id))
+        );
+        setSelect(0);
+        setAllChecked(false);
     }
 
     function handleChange(e) {
