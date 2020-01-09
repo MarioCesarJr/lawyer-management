@@ -7,6 +7,7 @@ class CustomerController {
         const customers = await Customer.findAll({
             limit: 10,
             offset: 10 * page - 10,
+            order: [['name', 'ASC']],
         });
 
         return res.json(customers);
@@ -51,9 +52,13 @@ class CustomerController {
     }
 
     async delete(req, res) {
-        const customer = await Customer.findByPk(req.params.id);
+        const ids = req.params.id;
+        const customerId = ids.split(',');
 
-        await customer.destroy();
+        customerId.map(async id => {
+            const customer = await Customer.findByPk(id);
+            customer.destroy();
+        });
 
         return res.send();
     }
